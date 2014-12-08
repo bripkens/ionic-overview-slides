@@ -1,0 +1,111 @@
+<html ng-app="example">
+<head>
+  <meta charset="UTF-8">
+  <title>example</title>
+
+  <link rel="stylesheet" href="/components/ionic/release/css/ionic.css">
+  <script src="/components/angular/angular.js"></script>
+  <script src="/components/angular-animate/angular-animate.js"></script>
+  <script src="/components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="/components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="/components/ionic/release/js/ionic.js"></script>
+  <script src="/components/ionic/release/js/ionic-angular.js"></script>
+
+  <script charset="utf-8">
+    (function() {
+      'use strict';
+
+      var module = angular.module('example', ['ionic']);
+
+      module.config(function($stateProvider, $urlRouterProvider) {
+        $stateProvider
+        .state('tabs', {
+          url: '/app',
+          abstract: true,
+          templateUrl: 'tabs.html'
+        })
+        .state('tabs.home', {
+          url: '/home',
+          views: {
+            'tab-home': {
+              templateUrl: 'tabs-home.html'
+            }
+          }
+        })
+        .state('tabs.subpage', {
+          url: '/subpage',
+          views: {
+            'tab-home': {
+              templateUrl: 'tabs-subpage.html'
+            }
+          }
+        })
+        .state('tabs.about', {
+          url: '/about',
+          views: {
+            'tab-about': {
+              templateUrl: 'tabs-about.html'
+            }
+          }
+        });
+
+        $urlRouterProvider.otherwise('/app/home');
+      });
+    })();
+  </script>
+
+</head>
+<body animation="slide-left-right-ios7">
+  <ion-nav-bar>
+    <ion-nav-back-button class="button-icon icon  ion-ios7-arrow-back">
+      Back
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-nav-view>
+  </ion-nav-view>
+
+  <script id="tabs.html" type="text/ng-template">
+    <ion-tabs class="tabs-positive tabs-icon-top">
+
+      <ion-tab title="Home" icon="ion-ios7-filing" ui-sref="tabs.home">
+        <ion-nav-view name="tab-home"></ion-nav-view>
+      </ion-tab>
+
+      <ion-tab title="About" icon="ion-ios7-gear" ui-sref="tabs.about">
+        <ion-nav-view name="tab-about"></ion-nav-view>
+      </ion-tab>
+
+    </ion-tabs>
+  </script>
+
+  <script id="tabs-home.html" type="text/ng-template">
+    <ion-view title="Home">
+      <ion-content class="padding">
+        <p>
+          Home
+        </p>
+
+        <button class="button button-positive" ui-sref="tabs.subpage">
+          Navigate to sub page
+        </button>
+      </ion-content>
+    </ion-view>
+  </script>
+
+  <script id="tabs-about.html" type="text/ng-template">
+    <ion-view title="About">
+      <ion-content class="padding">
+        About
+      </ion-content>
+    </ion-view>
+  </script>
+
+  <script id="tabs-subpage.html" type="text/ng-template">
+    <ion-view title="Sub page">
+      <ion-content class="padding">
+        Another page.
+      </ion-content>
+    </ion-view>
+  </script>
+</body>
+</html>

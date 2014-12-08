@@ -1,0 +1,41 @@
+<html ng-app="example">
+<head>
+  <meta charset="UTF-8">
+  <title>example</title>
+
+  <link rel="stylesheet" href="../components/ionic/release/css/ionic.css">
+  <script src="../components/angular/angular.js"></script>
+  <script src="../components/angular-animate/angular-animate.js"></script>
+  <script src="../components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="../components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="../components/ionic/release/js/ionic.js"></script>
+  <script src="../components/ionic/release/js/ionic-angular.js"></script>
+
+  <script charset="utf-8">
+    (function() {
+      'use strict';
+
+      var module = angular.module('example', ['ionic']);
+    })();
+  </script>
+
+  <style>
+    img {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <ion-slide-box>
+    <ion-slide>
+      <img src="minion-banana.jpg" />
+    </ion-slide>
+    <ion-slide>
+      <img src="minion-hitman.jpg" />
+    </ion-slide>
+    <ion-slide>
+      <img src="minion-batman-superman.jpg" />
+    </ion-slide>
+  </ion-slide-box>
+</body>
+</html>

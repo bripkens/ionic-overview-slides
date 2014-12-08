@@ -1,0 +1,42 @@
+<html ng-app="example">
+<head>
+  <meta charset="UTF-8">
+  <title>example</title>
+
+  <link rel="stylesheet" href="../components/ionic/release/css/ionic.css">
+  <script src="../components/angular/angular.js"></script>
+  <script src="../components/angular-animate/angular-animate.js"></script>
+  <script src="../components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="../components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="../components/ionic/release/js/ionic.js"></script>
+  <script src="../components/ionic/release/js/ionic-angular.js"></script>
+
+  <script charset="utf-8">
+    (function() {
+      'use strict';
+
+      var module = angular.module('example', ['ionic']);
+
+      module.controller('HelloController', function($scope) {
+        $scope.items = [
+          'codecentric AG',
+          'Drifty Co.',
+          'Google Inc.',
+          'Adobe Inc.'
+        ];
+      })
+    })();
+  </script>
+</head>
+<body ng-controller="HelloController">
+  <ion-list>
+    <ion-item ng-repeat="item in items">
+      Hello, {{item}}!
+      <ion-option-button class="button-positive"
+                         ng-click="share(item)">
+        Share
+      </ion-option-button>
+    </ion-item>
+  </ion-list>
+</body>
+</html>

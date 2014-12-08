@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Ionic Overview by Ben Ripkens</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="io-slides/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="io-slides/css/phone.css">
+  <link href="components/fontawesome/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <base target="_blank">
+  <script src="slide_config.js"></script>
+  <script data-main="io-slides/js/slides" src="io-slides/js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0">
+
+  <slides class="layout-widescreen">
+
+    <slide class="logoslide nobackground">
+      <article class="flexbox vcenter">
+        <span><img src="images/codecentric-logo.png"></span>
+      </article>
+    </slide>
+
+
+    <slide class="title-slide segue nobackground">
+      <hgroup class="auto-fadein">
+        <h1 data-config-title><!-- populated from slide_config.json --></h1>
+        <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+        <p data-config-presenter><!-- populated from slide_config.json --></p>
+      </hgroup>
+    </slide>
+
+
+    <slide>
+      <article>
+        <ul class="trainers">
+          <li>
+            <img src="https://2.gravatar.com/avatar/1dc323b6c88b54ca55701ab5ddda7628?s=140"
+            alt="Ben's avatar"
+            class="avatar">
+            <span class="name">Ben Ripkens</span>
+            <ul>
+              <li>
+                <i class="fa fa-keyboard-o"></i>
+                <a href="http://codecentric.de">
+                  developer with codecentric AG
+                </a>
+              </li>
+              <li>
+                <i class="fa fa-twitter"></i>
+                <a href="https://twitter.com/benripkens">
+                  @benripkens
+                </a>
+              </li>
+              <li>
+                <i class="fa fa-github"></i>
+                <a href="https://github.com/bripkens">
+                  github.com/bripkens
+                </a>
+              </li>
+              <li>
+                <i class="fa fa-envelope"></i>
+                <a href="mailto:ben.ripkens@codecentric.de">
+                  ben.ripkens@codecentric.de
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </article>
+    </slide>
+
+
+    <slide>
+      <hgroup>
+        <h2>High level overview</h2>
+      </hgroup>
+      <article>
+        <img src="images/ionic.png"
+        style="width:300px;margin-bottom:1em"
+        class="centered" />
+        <ul>
+          <li>framework for hybrid mobile apps</li>
+          <li>based on AngularJS and Cordova</li>
+          <li>open source (MIT licensed)</li>
+          <li>combination of various open source tools and frameworks</li>
+        </ul>
+      </article>
+    </slide>
+
+
+    <slide>
+      <article class="flexbox vcenter">
+        <h2 class="blue3">So, what is a hybrid app anyway?</h2>
+      </article>
+    </slide>
+
+
+    <slide>
+      <hgroup>
+        <h2>Native app</h2>
+      </hgroup>
+      <article>
+        <ul>
+          <li>developed using the platform's toolsets</li>
+          <li>one codebase per platform</li>
+          <li>great user experience and performance possible</li>
+          <li>default design determined by platform</li>
+        </ul>
+
+        <div class="iphone-landscape">
+          <img src="images/stocks.png"  />
+        </div>
+
+        <p class="footnote">
+          image shows the Stocks app on an iPhone 6
+        </p>
+      </article>
+    </slide>
+
+
+    <slide>
+      <hgroup>
+        <h2>Mobile website</h2>
+      </hgroup>
+      <article>
+        <ul>
+          <li>Just a website that</li>
+          <li>responds to different viewport sizes,</li>
+          <li>is optimized to be loaded via slow connections.</li>
+          <li>
+            circumvent app store and monetization rules of app stores
+          </li>
+        </ul>
+
+        <div class="iphone-landscape">
+          <img src="images/ft.png"  />
+        </div>
+
+        <p class="footnote">
+          image shows the mobile Financial Times website on an iPhone 6
+        </p>
+      </article>
+    </slide>
+
+
+    <slide>
+      <hgroup>
+        <h2>Hybrid app</h2>
+      </hgroup>
+      <article>
+        <ul>
+          <li>a web app that is running inside a native shell</li>
+          <li>looks <em>similar</em> to a native app and feels like one</li>
+          <li>distributed via the platforms' app store</li>
+          <li>one codebase, multiple platforms</li>
+        </ul>
+
+        <div class="iphone-landscape">
+          <img src="images/feedly.png"  />
+        </div>
+
+        <p class="footnote">
+          Image shows the Feedly hybrid app on an iPhone 6
+        </p>
+      </article>
+    </slide>
+
+
+    <slide>
+      <article>
+        <img src="images/architecture.png" class="centered" />
+      </article>
+    </slide>
+
+
+    <slide>
+      <hgroup>
+        <h2>Apache Cordova: A hybrid app platform</h2>
+      </hgroup>
+      <article>
+        <img src="images/cordova.png"
+        style="width:300px;margin-bottom:1em"
+        class="centered" />
+        <p style="font-style:italic; font-size: 1.3em; text-align: center">
+          Apache Cordova is a platform
+          for building native mobile
+          applications using HTML, CSS
+          and JavaScript
+        </p>
+
+        <p class="footnote">
+          Source:
+          <a href="http://cordova.apache.org/">http://cordova.apache.org/</a>
+        </p>
+      </article>
+    </slide>
+
+
+    <slide>
+      <hgroup>
+        <h2>Cordova hides OS differences</h2>
+      </hgroup>
+      <article>
+        <img src="images/plugin.png" class="centered" />
+      </article>
+    </slide>
+
+
+    <slide>
+      <article class="flexbox vcenter">
+        <h2 class="blue3">Let's take a look at Ionic</h2>
+      </article>
+    </slide>
+
+
+    <slide>
+      <hgroup>
+        <h2>Hello World with Ionic</h2>
+      </hgroup>
+      <article>
+        <pre class="prettyprint" data-lang="html">
+&lt;ion-list&gt;
+  &lt;ion-item ng-repeat=&quot;item in items&quot;&gt;
+    Hello, {{item}}!
+    &lt;ion-option-button class=&quot;button-positive&quot;&gt;
+      Share
+    &lt;/ion-option-button&gt;
+  &lt;/ion-item&gt;
+&lt;/ion-list&gt;</pre>
+          <div class="iphone-landscape">
+            <iframe src="examples/hello_world.html"></iframe>
+          </div>
+        </article>
+      </slide>
+
+
+    <slide class="fill nobackground" style="background-image: url(images/overview.png);
+                                            background-size: contain;
+                                            background-color: white;
+                                            background-position: 50% 50%;"></slide>
+
+
+    <slide>
+      <article class="flexbox vcenter">
+        <h2 class="blue3">Programming Model</h2>
+      </article>
+    </slide>
+
+
+    <slide>
+      <hgroup>
+        <h2>Many directives</h2>
+      </hgroup>
+      <article>
+        <pre class="prettyprint" data-lang="html">
+&lt;ion-slide-box&gt;
+  &lt;ion-slide&gt;&lt;img src="banana.jpg"/&gt;&lt;/ion-slide&gt;
+  &lt;ion-slide&gt;&lt;img src="hitman.jpg"/&gt;&lt;/ion-slide&gt;
+  &lt;ion-slide&gt;&lt;img src="batman.jpg"/&gt;&lt;/ion-slide&gt;
+&lt;/ion-slide-box&gt;</pre>
+        <div class="iphone-landscape">
+          <iframe src="examples/slidebox.html"></iframe>
+        </div>
+      </article>
+    </slide>
+
+
+    <slide>
+      <hgroup>
+        <h2>that are simple to use</h2>
+      </hgroup>
+      <article>
+        <pre class="prettyprint" data-lang="html">
+&lt;ion-content&gt;
+  &lt;ion-refresher pulling-text="Pull to refresh..."
+                 on-refresh="addItem()"&gt;
+  &lt;/ion-refresher&gt;
+&lt;/ion-content&gt;
+        </pre>
+        <div class="iphone-landscape">
+          <iframe src="examples/pull-to-refresh.html"></iframe>
+        </div>
+      </article>
+    </slide>
+
+
+    <slide>
+      <hgroup>
+        <h2>as well as Angular services</h2>
+      </hgroup>
+      <article>
+        <pre class="prettyprint" data-lang="javascript">
+$ionicModal.fromTemplateUrl('modal.html', {
+  scope: $scope,
+  animation: 'slide-in-up'
+})
+.then(function(modal) {
+  modal.show();
+});</pre>
+        <div class="iphone-landscape">
+          <iframe src="examples/modal.html"></iframe>
+        </div>
+      </article>
+    </slide>
+
+
+    <slide>
+      <article class="flexbox vcenter">
+        <h2 class="blue3">Most components work this way</h2>
+        <p class="morenote">except for the navigation stack</p>
+      </article>
+    </slide>
+
+
+    <slide>
+      <hgroup>
+        <h2>Mobile Navigation Patterns</h2>
+      </hgroup>
+      <article>
+        <ul>
+          <li>Your app should adhere to common mobile navigation patterns.</li>
+          <li>
+            Side Menus and Tabs are two such patterns, but they are vastly
+            different.
+          </li>
+          <li>
+            Side Menus have one navigation history, whereas Tabs have as many
+            histories as there are tabs.
+          </li>
+        </ul>
+
+        <p class="takeaway">So we need to keep track of multiple histories!</p>
+      </article>
+    </slide>
+
+
+    <slide class="fill nobackground" style="background-image: url(images/chill-cat.jpg);
+                                            background-size: contain;
+                                            background-position: 50% 50%;
+                                            background-color: white;"></slide>
+
+
+    <slide class="fill nobackground" style="background-image: url(images/tabs-nav-stack.png);
+                                            background-size: contain;
+                                            background-position: 50% 50%;
+                                            background-color: white;"></slide>
+
+    <slide>
+      <hgroup>
+        <h2>Multiple Views</h2>
+      </hgroup>
+      <article>
+        <pre class="prettyprint" data-lang="javascript">
+&lt;ion-tabs class=&quot;tabs-positive tabs-icon-top&quot;&gt;
+  &lt;ion-tab title=&quot;Home&quot; icon=&quot;ion-ios7-filing&quot; ui-sref=&quot;tabs.home&quot;&gt;
+    &lt;ion-nav-view name=&quot;tab-home&quot;&gt;&lt;/ion-nav-view&gt;
+  &lt;/ion-tab&gt;
+  &lt;ion-tab title=&quot;About&quot; icon=&quot;ion-ios7-gear&quot; ui-sref=&quot;tabs.about&quot;&gt;
+    &lt;ion-nav-view name=&quot;tab-about&quot;&gt;&lt;/ion-nav-view&gt;
+  &lt;/ion-tab&gt;
+&lt;/ion-tabs&gt;</pre>
+        <div class="iphone-landscape">
+          <iframe src="examples/tabs-navigation.html"></iframe>
+        </div>
+      </article>
+    </slide>
+
+
+    <slide>
+      <article class="flexbox vcenter">
+        <h2 class="blue3">Okay okay, so how do I get started?</h2>
+      </article>
+    </slide>
+
+
+    <slide>
+      <hgroup>
+        <h2>Creating projects</h2>
+      </hgroup>
+      <article>
+        <ul>
+          <li>Install the CLI <code>npm install -g ionic</code></li>
+          <li>Remarkably similar to <code>cordova create</code></li>
+          <li>
+            Use it so get the recommended structure for projects using
+            <ul>
+              <li>Tabs</li>
+              <li>Sidemenus</li>
+            </ul>
+          </li>
+          <li>
+            Project templates are actually GitHub repositories
+          </li>
+          <li>
+            Adds recommended Cordova plugins automatically to the project
+          </li>
+        </ul>
+        <pre>ionic start &lt;PATH&gt; [template]</pre>
+      </article>
+    </slide>
+
+
+    <slide>
+      <article class="flexbox vcenter">
+        <h2 class="blue3">More goodies from Drifty Co.</h2>
+      </article>
+    </slide>
+
+
+    <slide>
+      <hgroup>
+        <h2>There is more: Ionicons</h2>
+      </hgroup>
+      <article>
+        <img src="images/ionicons.png" class="centered"/>
+        <!-- Over 500 MIT licensed icons -->
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>There is more: Ionic Creator</h2>
+      </hgroup>
+      <article>
+        <img src="images/creator-preview.png" class="centered"/>
+        <!-- business model unknown! -->
+      </article>
+    </slide>
+
+
+    <slide>
+      <article class="flexbox vcenter">
+        <h2 class="blue3">Stuff I didn't tell you</h2>
+      </article>
+    </slide>
+
+
+    <slide>
+      <hgroup>
+        <h2>Browser support</h2>
+      </hgroup>
+      <article>
+        <ul>
+          <li>iOS 6+ and Android 4+ are supported</li>
+          <li>Windows Phone and FirefoxOS support is on the roadmap</li>
+        </ul>
+
+        <img src="images/android-4.png" class="centeted" style="position:absolute;bottom:130px;width:320px;"/>
+        <img src="images/ios6.png" class="centeted" style="position:absolute;bottom:245px;left:480px;width:290px;" />
+      </article>
+    </slide>
+
+
+    <slide>
+      <hgroup>
+        <h2>Maturity</h2>
+      </hgroup>
+      <article>
+        <ul>
+          <li class="red2" style="font-weight: bold">
+            Ionic is only one year old (started at 2013-08-20)
+          </li>
+          <li>
+            There hasn't been a 1.0 release yet
+          </li>
+          <li>
+            no large enterprises are commited to it (yet)
+          </li>
+          <li>
+            they are closely collaborating with the Angular team
+          </li>
+        </ul>
+
+        <p class="takeaway">
+          Evaluate your usage of Ionic thoroughly before settling for it.
+        </p>
+      </article>
+    </slide>
+
+
+    <slide>
+      <hgroup>
+        <h2>Complexity vs. organizational size</h2>
+      </hgroup>
+      <article>
+        <p>Thesis:</p>
+        <ul>
+          <li>High complexity results in less contributions</li>
+          <li>Complex frameworks require stable organizations</li>
+          <li>Complex frameworks are reliant on corporate sponsors</li>
+        </ul>
+
+        <p>Applied to Ionic:</p>
+        <ul>
+          <li>
+            Ionic uses well established tools under the hood to solve
+            the complicated problems, e.g. hybrid app bundling via Cordova.
+          </li>
+          <li>
+            Ionic consists of standard Angular controllers, directives, services
+            and templates. Every Angular developer can read and understand
+            Ionic's source code.
+          </li>
+        </ul>
+      </article>
+    </slide>
+
+
+    <slide>
+      <hgroup>
+        <h2>Roadmap</h2>
+      </hgroup>
+      <article>
+        <ul>
+          <li><strong>Release 1.0</strong></li>
+          <li>
+            Refactor the Ionic core and move components into separate modules.
+            <em>(aka Ions concept)</em>
+          </li>
+          <li>
+            Refactor the page transition and animation system.
+          </li>
+          <li>
+            Release a set of (potentially paid) services like:
+            <ul>
+              <li>Creator</li>
+              <li>AB Testing</li>
+              <li>Analytics</li>
+              <li>Live updates on devices</li>
+              <li>Push Services</li>
+              <li>Beta Testing via package previews</li>
+            </ul>
+          </li>
+          <li>
+            Support Material Design
+          </li>
+        </ul>
+      </article>
+    </slide>
+
+
+    <slide>
+      <hgroup>
+        <h2>The near future</h2>
+      </hgroup>
+      <article>
+        <p class="red2">
+          Warning: Part of this information is undocumented, bleeding edge and
+          may change. It is based on actual commits to the GitHub repository.
+        </p>
+        <ul>
+          <li>The next Ionic version will be based on Angular 1.3.x</li>
+          <li>
+            An API to modify the navigation history will be added
+            (<code>$ionicHistory</code>)
+          </li>
+          <li>
+            Otherwise it will mostly be about bug fixes
+          </li>
+          <li>
+            Ionic's CLI get's further support for Ionic Creator and other
+            Drifty services
+          </li>
+        </ul>
+      </article>
+    </slide>
+
+
+    <slide>
+      <hgroup>
+        <h2>When you want to make use of Ionic now</h2>
+      </hgroup>
+      <article>
+        <ul>
+          <li>Many of Ionic's features work like a charm.</li>
+          <li>
+            Components like ranges, action sheets, alerts and others
+            are fully functionality and enable great usability.
+          </li>
+          <li>
+            The navigation system works reasonably well, but has some glitches.
+          </li>
+          <li>
+            Follow general AngularJS best practices.
+          </li>
+        </ul>
+
+        <p class="takeaway">
+          Be prepared to dive into framework code.
+        </p>
+      </article>
+    </slide>
+
+
+    <slide class="credits">
+      <article class="flexbox vcenter">
+        <h2 class="blue3 questions">Questions?</h2>
+
+        <ul class="trainers">
+          <li>
+            <img src="https://2.gravatar.com/avatar/1dc323b6c88b54ca55701ab5ddda7628?s=140"
+            alt="Ben's avatar"
+            class="avatar">
+            <span class="name">Ben Ripkens</span>
+            <ul>
+              <li>
+                <i class="fa fa-keyboard-o"></i>
+                <a href="http://codecentric.de">
+                  developer with codecentric AG
+                </a>
+              </li>
+              <li>
+                <i class="fa fa-twitter"></i>
+                <a href="https://twitter.com/benripkens">
+                  @benripkens
+                </a>
+              </li>
+              <li>
+                <i class="fa fa-github"></i>
+                <a href="https://github.com/bripkens">
+                  github.com/bripkens
+                </a>
+              </li>
+              <li>
+                <i class="fa fa-envelope"></i>
+                <a href="mailto:ben.ripkens@codecentric.de">
+                  ben.ripkens@codecentric.de
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </article>
+    </slide>
+
+    <slide class="backdrop"></slide>
+
+  </slides>
+
+    <!--[if IE]>
+    <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+    <![endif]-->
+</body>
+</html>

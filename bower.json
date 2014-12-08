@@ -1,0 +1,26 @@
+{
+  "name": "ionic-slides",
+  "version": "1.0.0",
+  "authors": [
+    "Ben Ripkens <bripkens.dev@gmail.com>"
+  ],
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "homepage": "http://bripkens.de",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ionic": "1.0.0-beta.13",
+    "fontawesome": "~4.2.0"
+  }
+}

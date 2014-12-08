@@ -1,0 +1,211 @@
+
+img {
+  max-width: 100%;
+}
+
+p.footnote {
+  font-size: 20px;
+  font-weight: 300;
+  position: absolute;
+  bottom: 47px;
+}
+
+p.smaller {
+  font-size: 20px;
+}
+
+input, button {
+  font-size: 20px;
+  color: gray
+}
+
+.badExample, .goodExample {
+  position: relative;
+}
+
+.badExample:before, .goodExample:before {
+  font-family: 'FontAwesome';
+  display: block;
+  position: absolute;
+  font-size: 3em;
+}
+
+.badExample:before {
+  content: "\f00d";
+  top: -16px;
+  right: -22px;
+  color: darkred;
+}
+
+.goodExample:before {
+  content: "\f00c";
+  top: -17px;
+  right: -34px;
+  color: green;
+}
+
+.takeaway {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  color: #2a7cdf;
+  margin-top: 40px;
+  font-size: 1.2em;
+}
+
+pre.tree {
+  line-height: 1.1;
+}
+
+img.centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.codeInput {
+  font-family: 'Source Code Pro', 'Courier New', monospace;
+  font-size: 20px;
+  line-height: 28px;
+  padding: 10px;
+  letter-spacing: -1px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 3px;
+  box-shadow: 0 0 1px gray;
+  border-color: gray;
+  color: gray;
+}
+
+table th {
+  background: whitesmoke;
+  color: #222;
+  text-align: center;
+}
+
+table tr > td:first-child {
+  color: inherit;
+  font-weight: normal;
+}
+
+table th, table td {
+  font-size: 1.2em;
+}
+
+table {
+  border-bottom: 0;
+}
+
+.iphone-landscape {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background: url(../images/iphone6-landscape.png);
+  background-size: 100%;
+  width: 600px;
+  height: 295px;
+  box-sizing: border-box;
+  padding: 19px 72px;
+  margin-top: 1em;
+}
+
+.iphone-landscape > img, .iphone-landscape > iframe {
+  width: 100%;
+  height: 100%;
+}
+
+h1 + ul {
+  margin-top: .7em;
+}
+
+h1 + pre {
+  margin-top: .5em;
+}
+
+pre + h1 {
+  margin-top: 1em;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.trainers {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 100px;
+}
+
+.trainers > * {
+  width: 60%;
+  margin-left: 20%;
+  position: relative;
+}
+
+.trainers li {
+  position: relative;
+  margin-bottom: 1em;
+}
+
+.trainers li:before {
+  content: "";
+}
+
+.trainers .avatar {
+  display: block;
+  margin: 5px auto;
+  border-radius: 5px;
+}
+
+.trainers .name {
+  text-align: center;
+  display: block;
+  font-size: 1.3em;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+
+.trainers ul {
+  list-style-type: none;
+  /*padding-left: 60px;*/
+}
+
+.trainers i {
+  font-size: 1.5em;
+  position: absolute;
+  top: -.15em;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.trainers a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 0;
+  margin-left: 60px;
+}
+
+.credits .questions {
+  position: absolute;
+  top: 45%;
+  left: 10%;
+}
+
+.credits .trainers {
+  position: absolute;
+  display: block;
+  right: 40px;
+  top: 10px;
+  width: 590px;
+}
+
+.credits .trainers > * {
+  width: inherit;
+  margin-left: 0;
+}
+
+.morenote {
+  margin-top: 1em;
+  font-weight: bold;
+}

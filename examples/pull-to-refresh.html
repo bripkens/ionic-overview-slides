@@ -1,0 +1,45 @@
+<html ng-app="example">
+<head>
+  <meta charset="UTF-8">
+  <title>example</title>
+
+  <link rel="stylesheet" href="/components/ionic/release/css/ionic.css">
+  <script src="/components/angular/angular.js"></script>
+  <script src="/components/angular-animate/angular-animate.js"></script>
+  <script src="/components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="/components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="/components/ionic/release/js/ionic.js"></script>
+  <script src="/components/ionic/release/js/ionic-angular.js"></script>
+
+  <script charset="utf-8">
+    (function() {
+      'use strict';
+
+      var module = angular.module('example', ['ionic']);
+
+      module.controller('ExampleController', function($scope) {
+        $scope.items = [2, 1];
+
+        $scope.addItem = function() {
+          $scope.items.unshift($scope.items.length + 1);
+          $scope.$broadcast('scroll.refreshComplete');
+        };
+      });
+    })();
+  </script>
+
+</head>
+<body ng-controller="ExampleController">
+  <ion-content>
+    <ion-refresher pulling-text="Pull to refresh..."
+                   on-refresh="addItem()">
+    </ion-refresher>
+    <ion-list>
+      <ion-item ng-repeat="item in items" class="item-avatar">
+        <img ng-src="http://lorempixel.com/100/100/people/{{item}}" />
+        <h2>Data Set {{item}}</h2>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</body>
+</html>

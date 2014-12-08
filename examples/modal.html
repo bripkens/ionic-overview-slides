@@ -1,0 +1,61 @@
+<html ng-app="example">
+<head>
+  <meta charset="UTF-8">
+  <title>example</title>
+
+  <link rel="stylesheet" href="/components/ionic/release/css/ionic.css">
+  <script src="/components/angular/angular.js"></script>
+  <script src="/components/angular-animate/angular-animate.js"></script>
+  <script src="/components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="/components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="/components/ionic/release/js/ionic.js"></script>
+  <script src="/components/ionic/release/js/ionic-angular.js"></script>
+
+  <script charset="utf-8">
+    (function() {
+      'use strict';
+
+      var module = angular.module('example', ['ionic']);
+
+      module.controller('HelloController', function($scope, $ionicModal) {
+        $scope.showModal = function() {
+          $ionicModal.fromTemplateUrl('modal.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+          })
+          .then(function(modal) {
+            $scope.modal = modal;
+            modal.show();
+          });
+        };
+
+        $scope.closeModal = function() {
+          $scope.modal.hide();
+        };
+      });
+    })();
+  </script>
+</head>
+<body ng-controller="HelloController" class="padding">
+  <button class="button button-positive"
+          ng-click="showModal()">
+    Show Modal
+  </button>
+
+  <script id="modal.html" type="text/ng-template">
+    <ion-modal-view>
+      <ion-header-bar>
+        <h1 class="title">My Modal title</h1>
+      </ion-header-bar>
+      <ion-content padding="true">
+        Your content goes here!<br>
+
+        <button class="button button-assertive"
+                ng-click="closeModal()">
+          Close Modal
+        </button>
+      </ion-content>
+    </ion-modal-view>
+  </script>
+</body>
+</html>
