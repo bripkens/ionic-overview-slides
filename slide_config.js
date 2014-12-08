@@ -14,13 +14,13 @@ var SLIDE_CONFIG = {
   },
 
   presenters: [
-  {
-    name: 'Ben Ripkens',
-    company: 'Developer<br>codecentric AG',
-    gplus: 'http://plus.google.com/107194541655176085264',
-    twitter: '@BenRipkens',
-    www: 'http://bripkens.de',
-    github: 'http://github.com/bripkens'
-  }
+    {
+      name: 'Ben Ripkens',
+      company: 'Developer<br>codecentric AG',
+      gplus: 'http://plus.google.com/107194541655176085264',
+      twitter: '@BenRipkens',
+      www: 'http://bripkens.de',
+      github: 'http://github.com/bripkens'
+    }
   ]
 };

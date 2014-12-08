@@ -8,7 +8,6 @@
   "moduleType": [
     "globals"
   ],
-  "license": "MIT",
   "homepage": "http://bripkens.de",
   "private": true,
   "ignore": [
